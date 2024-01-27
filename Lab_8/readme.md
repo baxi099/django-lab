@@ -26,6 +26,15 @@ Now, add below functionalities in your project :
   - forms.py file : two classes, one for blog, other for blog post
   - view functions for adding blog and for adding blog post.
   - two templates : create_blog.html and create_blog_post.html
-- Add necessary css / bootstrap to the tempaltes to make it attractive. 
+
+**Extension-2**
+
+- Add necessary css / bootstrap to the tempaltes to make it attractive.
+
+**Extension-3**
+
+- Setup authentication ( Register, Login and Logout) in the project.
+- Now, when the user creates a new blog, it automatically maps to the current logged in user instead of selecting a user from the dropdown list.
 
 
+  
