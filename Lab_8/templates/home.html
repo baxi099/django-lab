@@ -1,0 +1,23 @@
+
+  <h2>Home</h2>
+  
+  <!-- Display Blogs -->
+  {% for blog in blogs %}
+    <div>
+      <p>ID: {{ blog.id}}</p>
+      <p>Creator: {{ blog.user.username }}</p>
+      <h3>{{ blog.blog_title }}</h3>
+      <hr>
+    </div>
+  {% endfor %}
+  
+  <!-- Display Blog Posts -->
+  {% for blog_post in blog_posts %}
+    <div>
+      <h3>{{ blog_post.blog.blog_title }}</h3>
+      <p>{{ blog_post.content }}</p>
+      <hr>
+    </div>
+  {% endfor %}
+  
+
