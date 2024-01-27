@@ -29,7 +29,7 @@ Now, add below functionalities in your project :
 
 **Extension-2**
 
-- Add necessary css / bootstrap to the tempaltes to make it attractive.
+- Add necessary bootstrap elements to the tempaltes to make it attractive.
 
 **Extension-3**
 
