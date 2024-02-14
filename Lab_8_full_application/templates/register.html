@@ -1,0 +1,26 @@
+
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Register</h2>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <!-- Keep the form as_p -->
+                        {{ form.as_p }}
+
+                        <!-- Bootstrap Button Styling -->
+                        <button class="btn btn-primary btn-block" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

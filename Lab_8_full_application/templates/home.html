@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Blog Mini Project</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Blog Mini Project</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="False" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link">Welcome, {{ user.username }}</span>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <h1 class="text-center">Blog Mini Project</h1>
+    {% if not user.is_authenticated %}
+        <p class="text-center">If you want to create a blog, <a href="login">login</a>.</p>
+    {% endif %}
+
+    {% for blog_post in blog_posts %}
+        <div class="card my-4">
+            <div class="card-header">
+                <p class="mb-0">Creator: {{ blog_post.blog.user.username }}</p>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{ blog_post.blog.blog_title }}</h3>
+                <p class="card-text">{{ blog_post.content }}</p>
+            </div>
+            <div class="card-footer text-muted">
+                <!-- Additional information or actions can be placed here -->
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
